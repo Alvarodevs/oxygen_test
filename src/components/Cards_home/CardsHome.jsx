@@ -10,7 +10,7 @@ export const CardsHome = () => {
       </Card>
 
       <Card>
-        <Link to={"/color_picker"}>COLOR PICKER CARD</Link>
+      <Link to={"/color_picker"}>COLOR PICKER CARD</Link>
       </Card>
     </CardsContainer>
   );

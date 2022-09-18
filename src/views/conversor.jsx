@@ -1,9 +1,10 @@
 import React from 'react'
+import ConverterApp from '../components/Converter/ConverterApp'
 
 export const ConversorView = () => {
 
     return (
-        <h2>CONVERSOR</h2>
+        <ConverterApp/>
     )
 }
 
