@@ -26,10 +26,13 @@ export const CardBottomContainer = styled.div`
 `;
 
 export const ResultContainer = styled.div`
-    margin-right: 1rem;
+    margin-right: 3rem;
     display: flex;
     align-items: center;
-`
+    @media (max-width: 641px) {
+        margin-right: 4rem;
+    }
+`;
 
 export const Result = styled.div`
     font-size: x-large;

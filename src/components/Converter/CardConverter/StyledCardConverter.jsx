@@ -64,7 +64,7 @@ export const MeasuresSelector = styled.select`
   border: none;
   border-bottom: 2px solid white;
   font-family: 'Poppins', sans-serif;
-  //font-weight: lighter;
+
   @media (max-width: 641px) {
     margin:0;
     width: 100%;
