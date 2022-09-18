@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useId } from "react";
 import {
     CardContainer,
     CardTitle,
@@ -10,7 +10,8 @@ import {
     InputContainer,
 } from "./StyledCardConverter";
 import { BsArrowLeftRight } from "react-icons/bs";
-import CardBottom from "../CardBottom";
+import CardBottom from "../CardConverterBottom";
+import {v4 as uuid} from "uuid";
 
 const CardConverter = () => {
     const [convertData, setConvertData] = useState({
@@ -19,6 +20,8 @@ const CardConverter = () => {
         result: 0,
         resultUnit: "miles",
     });
+
+    const id = uuid();
 
     const handleSelection = (e) => {
         const unitsValuesPair = e.target.value.split("_");
@@ -66,6 +69,11 @@ const CardConverter = () => {
         }));
     };
     
+    //Data manipulation in localStorage
+
+    const saveData = () => {  
+        localStorage.setItem(id, JSON.stringify(convertData));
+    }
 
     return (
         <CardContainer>
@@ -120,6 +128,7 @@ const CardConverter = () => {
             <CardBottom
                 resultUnit={convertData.resultUnit}
                 result={convertData.result}
+                saveData={saveData}
             />
         </CardContainer>
     );

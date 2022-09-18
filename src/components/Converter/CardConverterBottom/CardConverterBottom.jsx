@@ -4,11 +4,11 @@ import {
     Result,
     ResultContainer,
     ResultUnit,
-} from "./StyledCardBottom";
+} from "./StyledCardConverterBottom";
 import { BsHeart } from "react-icons/bs";
 import PropTypes from "prop-types";
 
-const CardBottom = ({ resultUnit, result }) => {
+const CardBottom = ({ resultUnit, result, saveData }) => {
     //This operation doesn´t show if result < 1
     //{Math.round((result + Number.EPSILON) * 100) / 100}
 
@@ -16,7 +16,7 @@ const CardBottom = ({ resultUnit, result }) => {
 
     return (
         <CardBottomContainer>
-            <BsHeart />
+            <BsHeart onClick={saveData}/>
             <ResultContainer>
                 <Result>{result}</Result>
                 <ResultUnit>{resultUnit}</ResultUnit>
@@ -29,5 +29,6 @@ export default CardBottom;
 
 CardBottom.propTypes = {
     resultUnit: PropTypes.string.isRequired,
-    result: PropTypes.number.isRequired
+    result: PropTypes.number.isRequired,
+    saveData: PropTypes.func.isRequired
 };
