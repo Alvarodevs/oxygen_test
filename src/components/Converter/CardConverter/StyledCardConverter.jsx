@@ -89,27 +89,22 @@ export const InputContainer = styled.div`
   }
 `
 export const AmountToConvertInput = styled.input`
-  width: 80%;
-  height: 2rem;
-  margin-right: 0.5rem;
-  background-color: transparent;
-  color: #FFFFFF;
-  text-align: end;
-  border: none;
-  border-bottom: 2px solid #FFFFFF;
+    width: 80%;
+    height: 2rem;
+    margin-right: 0.5rem;
+    background-color: transparent;
+    color: #ffffff;
+    text-align: end;
+    border: none;
+    border-bottom: 2px solid #ffffff;
 
-  :active{
-      color: #FFFFFF;
-  }
+    :active & :focus-visible {
+        color: #ffffff;
+        border-color: transparent;
+    }
 
-  :focus-visible{
-      border-color: transparent;
-      color: #FFFFFF;
-  }
-
-
-  @media (max-width: 641px) {
-    width: 62%;
-    margin: 0;
-  }
+    @media (max-width: 641px) {
+        width: 62%;
+        margin: 0;
+    }
 `;

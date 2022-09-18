@@ -9,6 +9,11 @@ import { BsHeart } from "react-icons/bs";
 import PropTypes from "prop-types";
 
 const CardBottom = ({ resultUnit, result }) => {
+    //This operation doesn´t show if result < 1
+    //{Math.round((result + Number.EPSILON) * 100) / 100}
+
+    //const resultTwoDecimals = result.toFixed(2)
+
     return (
         <CardBottomContainer>
             <BsHeart />

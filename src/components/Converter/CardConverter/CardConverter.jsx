@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
     CardContainer,
     CardTitle,
@@ -13,36 +13,59 @@ import { BsArrowLeftRight } from "react-icons/bs";
 import CardBottom from "../CardBottom";
 
 const CardConverter = () => {
-    const [inputUnit, setInputUnit] = useState("km");
-    const [resultUnit, setResultUnit] = useState("miles");
-    const [result, setResult] = useState(0)
-    const [optionSelected, setOptionSelected] = useState('km')
-    const [inputAmount, setInputAmount] = useState(0)
+    const [convertData, setConvertData] = useState({
+        inputAmount: 0,
+        inputUnit: "km",
+        result: 0,
+        resultUnit: "miles",
+    });
 
     const handleSelection = (e) => {
-        const allValues = e.target.value.split("_");
-        setInputUnit(allValues[0]);
-        setOptionSelected(allValues[0]);
-        setResultUnit(allValues[1]);
+        const unitsValuesPair = e.target.value.split("_");
+        setConvertData(() => ({
+            ...convertData,
+            inputUnit: unitsValuesPair[0],
+            resultUnit: unitsValuesPair[1],
+            inputAmount: 0,
+            result: 0,
+        }));
+    };
+    console.log("CONVERT DATA", convertData);
+
+    const Operations = (number) => {
+        if (convertData.inputUnit === "km") {
+            return number * 0.621371;
+        } else if (convertData.inputUnit === "miles") {
+            return number * 1.609344;
+        } else if (convertData.inputUnit === "feet") {
+            return number * 0.3048;
+        } else if (convertData.inputUnit === "meters") {
+            return number * 3.280839895;
+        } else if (convertData.inputUnit === "cm") {
+            return number * 0.3937007874;
+        } else if (convertData.inputUnit === "inches") {
+            return number * 2.54;
+        }
     };
 
     const handleSwap = (e) => {
-        setInputUnit(resultUnit);
-        setResultUnit(inputUnit);
-    }
+        setConvertData(() => ({
+            ...convertData,
+            inputUnit: convertData.resultUnit,
+            resultUnit: convertData.inputUnit,
+            inputAmount: convertData.result,
+            result: convertData.inputAmount,
+        }));
+    };
 
     const handleInputOperations = (e) => {
-        setInputAmount(e.target.value);
-        if (inputUnit === "km") {
-            return setResult(Math.round(e.target.value * 0.621371));
-        } else if (inputUnit === "miles") {
-            return setResult(e.target.value * 1.609344);
-        }
-    }
-    console.log('RESULT', result);
-    // const handleInput = e => {
-    //     setInputAmount(e.target.value)
-    // }
+        setConvertData(() => ({
+            ...convertData,
+            inputAmount: e.target.value,
+            result: Operations(e.target.value),
+        }));
+    };
+    
 
     return (
         <CardContainer>
@@ -89,11 +112,15 @@ const CardConverter = () => {
                         type="text"
                         inputmode="numeric"
                         onChange={handleInputOperations}
+                        value={convertData.inputAmount}
                     />
-                    {inputUnit}
+                    {convertData.inputUnit}
                 </InputContainer>
             </DataConversionContainer>
-            <CardBottom resultUnit={resultUnit} result={result} />
+            <CardBottom
+                resultUnit={convertData.resultUnit}
+                result={convertData.result}
+            />
         </CardContainer>
     );
 };
