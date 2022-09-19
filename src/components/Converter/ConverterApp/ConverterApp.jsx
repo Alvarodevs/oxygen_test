@@ -2,6 +2,7 @@ import React from 'react'
 import {AppConverterContainer} from './StyledConverterApp'
 import CardConverter from '../CardConverter'
 import SavedConversionCard from '../SavedConversionsCard'
+import Footer from '../Footer'
 
 const ConverterApp = () => {
 
@@ -12,7 +13,8 @@ const ConverterApp = () => {
       <CardConverter/>
 
       <SavedConversionCard/>
-        
+
+      <Footer/>  
     </AppConverterContainer>
 
   )
