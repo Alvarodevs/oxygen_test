@@ -50,23 +50,23 @@ export const ColorPickerHeader = styled.div`
     display: flex;
     width: 100%;
     height: 7vh;
-    padding-right: 20%;
+    padding-top: 1rem;
     justify-content: center;
     align-items: center;
-    background-color: #2C2C2C;
-    color: #FFFFFF;
-    font-size: 36px;
-    
+    background-color: #2c2c2c;
+    color: #ffffff;
+    font-size: 2rem;
+
     @media (max-width: 641px) {
         width: 100%;
-        
+        font-size: 1.5rem;
     }
 
     svg {
-        border: #2C2C2C;
+        border: #2c2c2c;
         margin-right: 1rem;
         stroke: transparent;
         stroke-width: 0.3;
         font-size: larger;
     }
-`
+`;

@@ -1,9 +1,9 @@
 import React from 'react'
-
+import ColorPickerApp from "../components/ColorPicker/ColorPickerApp";
 export const ColorPickerView = () => {
 
     return (
-        <h2>COLOR PICKER</h2>
+        <ColorPickerApp></ColorPickerApp>
     )
 }
 
