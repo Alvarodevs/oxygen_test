@@ -33,7 +33,6 @@ const CardConverter = () => {
             result: 0,
         }));
     };
-    console.log("CONVERT DATA", convertData);
 
     const Operations = (number) => {
         if (convertData.inputUnit === "km") {
@@ -64,7 +63,7 @@ const CardConverter = () => {
     const handleInputOperations = (e) => {
         setConvertData(() => ({
             ...convertData,
-            inputAmount: e.target.value,
+            inputAmount: parseInt(e.target.value),
             result: Operations(e.target.value),
         }));
     };
@@ -120,7 +119,7 @@ const CardConverter = () => {
                         type="text"
                         inputmode="numeric"
                         onChange={handleInputOperations}
-                        value={convertData.inputAmount}
+                        value={convertData.inputAmount ? convertData.inputAmount : 0}
                     />
                     {convertData.inputUnit}
                 </InputContainer>
