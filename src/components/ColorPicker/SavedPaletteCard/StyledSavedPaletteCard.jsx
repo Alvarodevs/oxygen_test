@@ -3,16 +3,16 @@ import styled from "styled-components";
 export const CardContainer = styled.div`
     width: 30%;
     height: 15vh;
-    
+
     margin: 1rem 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 
     @media (max-width: 641px) {
-        width: 80%;
+        width: 85%;
         height: 10vh;
-        margin: 1.5rem 0 0.3rem 0;
+        margin: 2rem 0 0 3rem;
     }
 `;
 
@@ -76,7 +76,7 @@ export const CircleSaved = styled.div`
     }
 
     @media (max-width: 641px) {
-        width: 10%;
+        width: 8%;
         height: 50%;
     }
 

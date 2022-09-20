@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { CirclesContainer, Circle } from "./StyledCircleColors";
 import { AiOutlinePlus } from "react-icons/ai";
+import PropTypes from "prop-types";
 
-const CircleColors = () => {
+const CircleColors = ({hexColor}) => {
     const initialActiveState = {
         1: false,
         2: false,
@@ -12,7 +13,6 @@ const CircleColors = () => {
     };
 
     const [isActive, setIsActive] = useState(initialActiveState);
-    console.log(isActive);
 
     const handleIsActive = (number) => {
         if (number === 1) {
@@ -45,19 +45,19 @@ const CircleColors = () => {
 
     return (
         <CirclesContainer>
-            <Circle active={isActive[1]} onClick={() => handleIsActive(1)}>
+            <Circle active={isActive[1]} hexColor={hexColor} onClick={() => handleIsActive(1)}>
                 <AiOutlinePlus />
             </Circle>
-            <Circle active={isActive[2]} onClick={() => handleIsActive(2)}>
+            <Circle active={isActive[2]} hexColor={hexColor} onClick={() => handleIsActive(2)}>
                 <AiOutlinePlus />
             </Circle>
-            <Circle active={isActive[3]} onClick={() => handleIsActive(3)}>
+            <Circle active={isActive[3]} hexColor={hexColor} onClick={() => handleIsActive(3)}>
                 <AiOutlinePlus />
             </Circle>
-            <Circle active={isActive[4]} onClick={() => handleIsActive(4)}>
+            <Circle active={isActive[4]} hexColor={hexColor} onClick={() => handleIsActive(4)}>
                 <AiOutlinePlus />
             </Circle>
-            <Circle active={isActive[5]} onClick={() => handleIsActive(5)}>
+            <Circle active={isActive[5]} hexColor={hexColor} onClick={() => handleIsActive(5)}>
                 <AiOutlinePlus />
             </Circle>
         </CirclesContainer>
@@ -65,3 +65,7 @@ const CircleColors = () => {
 };
 
 export default CircleColors;
+
+CircleColors.PropTypes = {
+    hexColor: PropTypes.string.isRequired
+}

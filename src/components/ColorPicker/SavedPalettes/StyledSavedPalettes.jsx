@@ -9,10 +9,11 @@ export const MainContainer = styled.div`
     align-self: center;
 
     @media (max-width: 641px) {
-        width: 80%;
+        width: 100%;
         height: fit-content;
-        margin-top: 5rem;
+        margin-top: 2rem;
         flex-direction: column;
         flex-wrap: nowrap;
+        justify-content: center;
     }
 `;

@@ -18,8 +18,13 @@ export const EditorContainer = styled.div`
 
 export const PickerBox = styled.div`
     width: 47%;
-    height: 100%;
+    height: fit-content;
     padding: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+
     @media (max-width: 641px) {
         width: 100%;
         margin-top: 1rem;
@@ -28,7 +33,7 @@ export const PickerBox = styled.div`
 
 export const NameBox = styled.div`
     width: 47%;
-    height: 100%;
+    height: 80%;
     padding: 0.5rem;
     display: flex;
     align-items: center;
@@ -37,7 +42,7 @@ export const NameBox = styled.div`
 
     @media (max-width: 641px) {
         width: 100%;
-        height: 40vh;
+        height: 15vh;
         margin-top: 1rem;
     }
 `;
@@ -56,6 +61,10 @@ export const InputButtonContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @media (max-width: 641px) {
+        justify-content: space-between;
+    }
 `;
 
 export const InputName = styled.input`
@@ -80,7 +89,13 @@ export const AddButton = styled.button`
     justify-content: center;
     align-items: center;
 
-    svg{
+    @media (max-width: 641px) {
+        //margin-top: 1rem;
+        width: 12%;
+        margin-right: 1rem;
+    }
+
+    svg {
         font-size: 2rem;
     }
 `;

@@ -1,13 +1,20 @@
-import React from 'react'
+import React, {useState} from 'react'
 import CirclesColors from '../CircleColors';
 import Editor from '../Editor';
 import {PaletteCreatorContainer} from "./StyledPaletteCreator";
 
 const PaletteCreator = () => {
+
+    const [colorClicked, setColorClicked] = useState('')
+
+    const handleColorToCircles = (color) => {
+        setColorClicked(color.hex);
+    }
+
     return (
         <PaletteCreatorContainer>
-            <CirclesColors></CirclesColors>
-            <Editor></Editor>
+            <CirclesColors color={colorClicked}></CirclesColors>
+            <Editor handleColorToCircles={handleColorToCircles}></Editor>
         </PaletteCreatorContainer>
     );
 };

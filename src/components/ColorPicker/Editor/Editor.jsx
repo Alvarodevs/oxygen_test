@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import {
     EditorContainer,
     PickerBox,
@@ -9,17 +10,25 @@ import {
     InputButtonContainer,
 } from "./StyledEditor";
 import { AiOutlinePlus } from "react-icons/ai";
+import {CompactPicker} from 'react-color';
 
-const Editor = () => {
+const Editor = ({ handleColorToCircles }) => {
+
+    const handleColor = (color, event) => {
+        handleColorToCircles(color);
+    };
+
     return (
-        <EditorContainer className="EDITORCONT">
-            <PickerBox>Picker</PickerBox>
+        <EditorContainer>
+            <PickerBox>
+                <CompactPicker onChange={handleColor} />
+            </PickerBox>
             <NameBox>
                 <TitleName>Name</TitleName>
                 <InputButtonContainer>
                     <InputName />
                     <AddButton>
-                        <AiOutlinePlus/>
+                        <AiOutlinePlus />
                     </AddButton>
                 </InputButtonContainer>
             </NameBox>
@@ -28,3 +37,7 @@ const Editor = () => {
 };
 
 export default Editor;
+
+Editor.PropTypes = {
+    handleColorToCircles: PropTypes.func,
+};

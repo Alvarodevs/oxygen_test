@@ -27,8 +27,9 @@ export const Circle = styled.div`
     justify-content: center;
     align-items: center;
     //background-color: ${(props) => (props.active ? "green" : null)};
-    background-color: ${(props) => (props.active ? "wheat" : "rgb(4, 4, 4)")};
-    /* background: linear-gradient(
+    background-color: ${(props) => (props.active ? "wheat" : props.hexColor)};
+    /* rgb(4, 4, 4)
+    background: linear-gradient(
         140deg,
         rgba(4, 4, 4, 0.8631827731092436) 10%,
         rgba(176, 176, 176, 1) 20%,
@@ -42,24 +43,14 @@ export const Circle = styled.div`
     ); */
 
     @media (max-width: 740px) {
-        width: 50px;
-        height: 50px;
+        width: ${(props) => (props.active ? "60px" : "50px")};
+        height: ${(props) => (props.active ? "60px" : "50px")};
     }
 
-    /* :hover {
-        width: 80px;
-        height: 80px;
-        transition: 0.2s ease-in-out;
-
-        @media (max-width: 740px) {
-            width: 50px;
-            height: 50px;
-            :hover {
-                width: 60px;
-                height: 60px;
-            }
-        }
-    } */
+    @media (max-width: 402px) {
+        width: ${(props) => (props.active ? "45px" : "35px")};
+        height: ${(props) => (props.active ? "45px" : "35px")};
+    }
 
     svg {
         font-size: 3rem;
