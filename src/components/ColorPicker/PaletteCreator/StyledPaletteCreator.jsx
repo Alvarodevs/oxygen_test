@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const PaletteCreatorContainer = styled.div`
     width: 60%;
-    height: 40vh;
+    height: 40%;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -10,6 +10,6 @@ export const PaletteCreatorContainer = styled.div`
 
     @media (max-width: 641px) {
         width: 90%;
-        margin-top: 3rem;
+        margin-top: 4rem;
     }
 `;
