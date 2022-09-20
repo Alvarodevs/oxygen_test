@@ -64,14 +64,15 @@ const CardConverter = () => {
         setConvertData(() => ({
             ...convertData,
             inputAmount: parseInt(e.target.value),
-            result: Operations(e.target.value),
+            result: Operations(e.target.value)
         }));
     };
     
     //Data manipulation in localStorage
 
-    const saveData = () => {  
+    const saveData = () => { 
         localStorage.setItem(id, JSON.stringify(convertData));
+        window.location.reload(); //works but not efficient
     }
 
     return (
