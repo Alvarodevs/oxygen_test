@@ -38,6 +38,6 @@ const Editor = ({ handleColorToCircles }) => {
 
 export default Editor;
 
-Editor.PropTypes = {
+Editor.propTypes = {
     handleColorToCircles: PropTypes.func,
 };

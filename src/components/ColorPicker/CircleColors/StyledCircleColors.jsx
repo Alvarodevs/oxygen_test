@@ -27,8 +27,10 @@ export const Circle = styled.div`
     justify-content: center;
     align-items: center;
     //background-color: ${(props) => (props.active ? "green" : null)};
-    background-color: ${(props) => (props.active ? "wheat" : props.hexColor)};
-    /* rgb(4, 4, 4)
+    background: ${(props) => (props.active ? 
+        "#c2c2c2" : 
+        props.hexColor)};
+    //rgb(4, 4, 4)
     background: linear-gradient(
         140deg,
         rgba(4, 4, 4, 0.8631827731092436) 10%,
@@ -40,7 +42,7 @@ export const Circle = styled.div`
         rgba(0, 0, 0, 1) 70%,
         rgba(176, 176, 176, 1) 80%,
         rgba(4, 4, 4, 1) 90%
-    ); */
+    );
 
     @media (max-width: 740px) {
         width: ${(props) => (props.active ? "60px" : "50px")};
