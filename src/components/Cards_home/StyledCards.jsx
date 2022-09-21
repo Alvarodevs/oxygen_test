@@ -26,7 +26,7 @@ export const Card = styled.div`
     color: #0d43d8;
     font-size: 2rem;
     transition: 0.2s ease-in-out;
-    & a {
+    a {
         text-decoration: none;
         color: inherit;
         padding: 1rem;
