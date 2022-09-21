@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const CardContainer = styled.div`
   width: 60%;
   height: 193px;
-  background-color: green;
   margin: auto;
   border-radius: 21px;
   background: #2e0039;
@@ -45,7 +44,6 @@ export const SelectorAndIconContainer = styled.div`
     stroke-width: 0.3;
     font-size: large;
     margin: 0.5rem 1rem 0 0.5rem;
-    //margin-right: 1rem;
     :hover{
         cursor: pointer;
     }
@@ -75,7 +73,6 @@ export const Options = styled.option`
     background-color: #2e0039;
     color: #FFFFFF;
     font-family: 'Poppins', sans-serif;
-    //font-weight: 100;
 `
 
 export const InputContainer = styled.div`
