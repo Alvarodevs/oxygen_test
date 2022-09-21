@@ -66,6 +66,6 @@ const CircleColors = ({hexColor}) => {
 
 export default CircleColors;
 
-CircleColors.PropTypes = {
-    hexColor: PropTypes.string.isRequired
+CircleColors.propTypes = {
+    hexColor: PropTypes.string
 }
